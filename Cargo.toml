@@ -1,0 +1,18 @@
+[package]
+name = "angell-fractal-security-architecture"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nicholas Reid Angell"]
+license = "Apache-2.0"
+description = "Angell Fractal Security Architecture: deterministic Gate/Brake/Phase/Growth operators over Julia dynamics"
+repository = ""
+readme = "README.md"
+keywords = ["security", "fractal", "julia", "deterministic", "anomaly-detection"]
+categories = ["no-std", "algorithms"]
+
+[features]
+default = ["std"]
+std = []
+
+[dependencies]
+libm = "0.2"

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Angell Fractal Security</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 400px;
+      min-height: 300px;
+      background: #0a0e27;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1f3a, #0f1419);
+      border-bottom: 2px solid #FFD700;
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .header h1 {
+      color: #FFD700;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .header .subtitle {
+      color: #8B5CF6;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    .header .phi {
+      color: #06FFA5;
+      font-size: 10px;
+      font-family: monospace;
+      margin-top: 4px;
+    }
+    .content { padding: 12px 16px; }
+    .domain-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      background: #0f1419;
+      border-radius: 6px;
+      border-left: 3px solid #06FFA5;
+    }
+    .domain-row.threat { border-left-color: #FF6B35; }
+    .domain-row.blocked { border-left-color: #FF0050; }
+    .domain-name {
+      font-weight: 500;
+      color: #fff;
+      font-size: 12px;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .domain-stats {
+      text-align: right;
+      font-size: 11px;
+      color: #888;
+    }
+    .threat-score {
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .score-low { color: #06FFA5; }
+    .score-mid { color: #FFA500; }
+    .score-high { color: #FF0050; }
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #555;
+    }
+    .footer {
+      border-top: 1px solid #1a1f3a;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 10px;
+      color: #555;
+    }
+    .footer a { color: #8B5CF6; text-decoration: none; }
+    .operators {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .op-badge {
+      text-align: center;
+      padding: 6px 4px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #1a1f3a;
+    }
+    .op-gate { color: #FFD700; border: 1px solid #FFD700; }
+    .op-brake { color: #FFA500; border: 1px solid #FFA500; }
+    .op-phase { color: #8B5CF6; border: 1px solid #8B5CF6; }
+    .op-growth { color: #06FFA5; border: 1px solid #06FFA5; }
+    #clear-btn {
+      background: none;
+      border: 1px solid #333;
+      color: #888;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    #clear-btn:hover { border-color: #FF6B35; color: #FF6B35; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>⬡ Angell Fractal Security</h1>
+    <div class="subtitle">Julia Set Network Classification</div>
+    <div class="phi">φ = 1.618033988749895 | c = -0.4 + 0.6i</div>
+  </div>
+
+  <div class="content">
+    <div class="operators">
+      <div class="op-badge op-gate">GATE</div>
+      <div class="op-badge op-brake">BRAKE</div>
+      <div class="op-badge op-phase">PHASE</div>
+      <div class="op-badge op-growth">GROWTH</div>
+    </div>
+
+    <div id="domain-list">
+      <div class="empty-state">Monitoring network requests...</div>
+    </div>
+
+    <center><button id="clear-btn">Clear Stats</button></center>
+  </div>
+
+  <div class="footer">
+    © 2025-2026 Nicholas Reid Angell | Apache 2.0
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

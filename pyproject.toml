@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "angell-fractal-security"
+version = "0.1.0"
+description = "Fractal-based cybersecurity using Julia set dynamics — Gate, Brake, Phase, Growth operators"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+    {name = "Nicholas Reid Angell"},
+]
+keywords = ["cybersecurity", "fractal", "julia-set", "intrusion-detection", "network-security"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+capture = ["scapy>=2.5"]
+viz = ["rich>=13.0", "matplotlib>=3.7"]
+all = ["angell-fractal-security[capture,viz]"]
+
+[project.scripts]
+angell-fractal = "angell_fractal_security.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/angell-enterprises/angell-fractal-security"
+Documentation = "https://github.com/angell-enterprises/angell-fractal-security#readme"
+Repository = "https://github.com/angell-enterprises/angell-fractal-security"
+Issues = "https://github.com/angell-enterprises/angell-fractal-security/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
